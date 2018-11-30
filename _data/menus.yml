@@ -1,0 +1,7 @@
+---
+main:
+  - url: /index.html
+    title: This is Massively
+    identifier: index.html
+    weight: 1
+---

@@ -1,0 +1,52 @@
+---
+label: Post
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Post Title
+    config:
+      required: true
+  - type: textarea
+    name: header
+    label: Post Header
+    description: The bold text displayed below the post date (under the nav bar)
+    config:
+      required: true
+  - type: textarea
+    name: excerpt
+    label: Post Excerpt
+    description: The text displayed below the post header and in any post thumbnails
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: datetime
+    name: date
+    label: Post Date
+    description: The date the post was created (displayed above the post header)
+    config:
+      required: true
+  - type: file
+    name: image
+    label: Content Image
+    description: The image displayed above the post content
+  - type: file
+    name: image_alt
+    label: Alternate Image
+    description: The image displayed in any post thumbnails
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - _posts/2017-04-18-ante-mattis.md
+  - _posts/2017-04-07-augue-lorem.md
+  - _posts/2017-04-11-odio-magna.md
+  - _posts/2017-04-22-primis-eget.md
+  - _posts/2017-04-24-sed-magna.md
+  - _posts/2017-04-25-sit-ante.md
+  - _posts/2017-04-14-tempus-sed.md

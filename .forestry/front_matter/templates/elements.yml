@@ -1,0 +1,25 @@
+---
+label: Elements
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: textarea
+    name: header
+    label: Page Header
+    description: The bold text displayed below the the page nav bar
+    config:
+      required: true
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: elements
+    config:
+      required: true
+pages:
+  - elements.md

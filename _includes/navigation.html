@@ -1,0 +1,15 @@
+<!-- Nav -->
+<nav id="nav">
+    <ul class="links">
+        {% for menuItem in site.menus.main %}
+        <li {% if menuItem.url == page.url %}class="active"{% endif %}><a href="{{ menuItem.url | relative_url }}">{{ menuItem.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if site.nav.display_social_icons %}
+      <ul class="icons">
+          {% for icon in site.nav.social_icons %}
+            <li><a href="{{ icon.url }}" class="icon {{ icon.icon }}"><span class="label">{{ icon.title }}</span></a></li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+</nav>

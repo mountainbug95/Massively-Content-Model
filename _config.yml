@@ -1,0 +1,57 @@
+title: Massively
+baseurl: /
+nav:
+  display_social_icons: true
+  social_icons:
+    - title: Twitter
+      icon: fa-twitter
+      url: '#'
+    - title: Facebook
+      icon: fa-facebook
+      url: '#'
+    - title: Instagram
+      icon: fa-instagram
+      url: '#'
+    - title: GitHub
+      icon: fa-github
+      url: '#'
+footer:
+  enable_form: true
+  contact_information:
+    - title: Address
+      description: |-
+        1234 Somewhere Road #87257
+        Nashville, TN 00000-0000
+    - title: Phone
+      description: (000) 000-0000
+      enable_link: true
+      url: '#'
+    - title: Email
+      description: info@untitled.tld
+      enable_link: true
+      url: '#'
+  social_media:
+    enabled: true
+    title: Social
+    social_icons:
+      - title: Twitter
+        icon: fa-twitter
+        url: '#'
+      - title: Facebook
+        icon: fa-facebook
+        url: '#'
+      - title: Instagram
+        icon: fa-instagram
+        url: '#'
+      - title: GitHub
+        icon: fa-github
+        url: '#'
+pagination:
+  enabled: true
+  per_page: 5
+  sort_reverse: true
+  sort_field: date
+plugins:
+  - jekyll-menus
+  - jekyll-paginate-v2
+permalink: '/posts/:slug:output_ext'

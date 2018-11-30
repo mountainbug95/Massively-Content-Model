@@ -1,0 +1,36 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+  - type: field_group
+    name: intro
+    label: Page Intro
+    description: The intro section displayed at the top of the landing page
+    fields:
+      - type: textarea
+        name: header
+        label: Intro Title
+        description: The title displayed at the top of the page intro
+      - type: textarea
+        name: text
+        label: Intro Text
+        description: The text displayed below the intro title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: boolean
+        name: show_scroll_button
+        label: Show Scroll Button
+        description: Displays the scroll button at the bottom of the intro section
+        default: false
+pages:
+  - index.md

@@ -1,0 +1,14 @@
+---
+layout: body
+---
+
+<!-- Post -->
+<section class="post">
+    <header class="major">
+        {% if page.date %}<span class="date">{{ page.date | date: '%B %e, %Y' }}</span>{% endif %}
+        <h1>{{ page.header | newline_to_br }}</h1>
+        {% if page.excerpt %}{{ page.excerpt | markdownify }}{% endif %}
+    </header>
+    {% if page.image %}<div class="image main"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" /></div>{% endif %}
+    {{ content }}
+</section>

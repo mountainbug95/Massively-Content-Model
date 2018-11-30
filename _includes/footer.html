@@ -1,0 +1,53 @@
+<!-- Footer -->
+<footer id="footer">
+    {% if site.footer.enable_form %}
+        <section>
+            <form method="post" action="#">
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="3"></textarea>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" /></li>
+                </ul>
+            </form>
+        </section>
+    {% endif %}
+    <section class="split contact">
+        {% for item in site.footer.contact_information %}
+            <section class="alt">
+                <h3>{{ item.title }}</h3>
+                {% if item.enable_link %}
+                    <p><a href="{{ item.url }}">{{ item.description | newline_to_br }}</a></p>
+                {% else %}
+                    <p>{{ item.description | newline_to_br }}</p>
+                {% endif %}
+            </section>
+        {% endfor %}
+        {% if site.footer.social_media.enabled %}
+          <section>
+              <h3>{{ site.footer.social_media.title }}</h3>
+              <ul class="icons alt">
+                  {% for icon in site.footer.social_media.social_icons %}
+                    <li><a href="{{ icon.url }}" class="icon alt {{ icon.icon }}"><span class="label">{{ icon.title }}</span></a></li>
+                  {% endfor %}
+              </ul>
+          </section>
+        {% endif %}
+    </section>
+</footer>
+
+<!-- Copyright -->
+<div id="copyright">
+    <ul><li>&copy; {{ site.title }}</li></ul>
+</div>

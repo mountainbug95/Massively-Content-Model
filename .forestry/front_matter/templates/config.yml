@@ -1,0 +1,92 @@
+---
+label: Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: field_group
+    name: nav
+    label: Navigation Bar Configuration
+    fields:
+      - type: boolean
+        name: display_social_icons
+        description: Displays the social icons in the page navigation bar
+        default: false
+      - type: field_group_list
+        name: social_icons
+        label: Social Media Icons
+        description: >-
+          A list of social media icons displayed on the right side of the
+          navigation bar
+        config:
+          labelField: title
+        fields:
+          - type: include
+            name: include_icon
+            label: Icon
+            template: icon
+  - type: field_group
+    name: footer
+    label: Footer
+    description: Footer Configuration
+    fields:
+      - type: boolean
+        name: enable_form
+        label: Enable Contact Form
+        description: Displays the contact form in the site footer
+        default: false
+      - type: field_group_list
+        name: contact_information
+        label: Contact Methods
+        description: A list of contact methods displayed in the site footer
+        config:
+          labelField: title
+        fields:
+          - type: text
+            name: title
+            label: Method Title
+            description: Displayed in bold next to the method description
+            config:
+              required: true
+          - type: textarea
+            name: description
+            label: Method Description
+            config:
+              required: true
+          - type: boolean
+            name: enable_link
+            label: Enable Link
+            description: >-
+              Makes the method description a hyperlink using the URL in the
+              method URL field
+            default: false
+          - type: text
+            name: url
+            label: Method URL
+      - type: field_group
+        name: social_media
+        label: Social Media Section
+        fields:
+          - type: boolean
+            name: enabled
+            label: Enabled
+            description: Displays the social media section
+          - type: text
+            name: title
+            label: Section Title
+            description: Displayed in bold next to the social media icons
+          - type: field_group_list
+            name: social_icons
+            label: Social Media Icons
+            config:
+              labelField: title
+            fields:
+              - type: include
+                name: include_icon
+                label: Icon
+                template: icon

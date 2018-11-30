@@ -1,0 +1,44 @@
+---
+label: Page
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: textarea
+    name: header
+    label: Page Header
+    description: The bold text displayed below the page date (under the nav bar)
+    config:
+      required: true
+  - type: textarea
+    name: excerpt
+    label: Page Excerpt
+    description: The text displayed below the page header and in any page thumbnails
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: datetime
+    name: date
+    label: Page Date
+    description: The date the page was created (displayed above the page header)
+  - type: file
+    name: image
+    label: Content Image
+    description: The image displayed above the page content
+  - type: file
+    name: image_alt
+    label: Alternate Image
+    description: The image displayed in any page thumbnails
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - generic.md

@@ -1,0 +1,25 @@
+---
+layout: base
+---
+
+<!-- Wrapper -->
+<div id="wrapper" {% if page.layout == 'home' %}class="fade-in"{% endif %}>
+
+    {% if page.layout == 'home' %}
+    {% include intro.html %}
+    {% endif %}
+
+    {% include header.html %}
+
+    {% include navigation.html %}
+
+    <!-- Main -->
+    <div id="main">
+
+        {{ content }}
+
+    </div>
+
+    {% include footer.html %}
+
+</div>
