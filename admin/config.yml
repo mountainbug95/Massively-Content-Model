@@ -94,6 +94,7 @@ collections:
                     widget: boolean
                     required: false
                     label: Enabled
+                    default: false
                     hint: Displays the social media section
                   - name: title
                     widget: string

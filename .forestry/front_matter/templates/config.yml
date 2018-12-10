@@ -76,6 +76,7 @@ fields:
             name: enabled
             label: Enabled
             description: Displays the social media section
+            default: false
           - type: text
             name: title
             label: Section Title
