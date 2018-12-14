@@ -27,9 +27,9 @@
         {% for item in site.footer.contact_information %}
             <section class="alt">
                 <h3>{{ item.title }}</h3>
-                {% if item.enable_link %}
+                {% if item.type == 'contact_with_link' %}
                     <p><a href="{{ item.url }}">{{ item.description | newline_to_br }}</a></p>
-                {% else %}
+                {% elsif item.type == 'contact_no_link' %}
                     <p>{{ item.description | newline_to_br }}</p>
                 {% endif %}
             </section>

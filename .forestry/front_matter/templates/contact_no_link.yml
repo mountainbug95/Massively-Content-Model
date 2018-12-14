@@ -1,0 +1,15 @@
+---
+label: Contact Method
+is_partial: true
+fields:
+  - type: text
+    name: title
+    label: Method Title
+    description: Displayed in bold next to the method description
+    config:
+      required: true
+  - type: textarea
+    name: description
+    label: Method Description
+    config:
+      required: true

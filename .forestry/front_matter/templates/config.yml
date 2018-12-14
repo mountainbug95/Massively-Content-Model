@@ -40,34 +40,13 @@ fields:
         label: Enable Contact Form
         description: Displays the contact form in the site footer
         default: false
-      - type: field_group_list
+      - type: blocks
         name: contact_information
         label: Contact Methods
         description: A list of contact methods displayed in the site footer
-        config:
-          labelField: title
-        fields:
-          - type: text
-            name: title
-            label: Method Title
-            description: Displayed in bold next to the method description
-            config:
-              required: true
-          - type: textarea
-            name: description
-            label: Method Description
-            config:
-              required: true
-          - type: boolean
-            name: enable_link
-            label: Enable Link
-            description: >-
-              Makes the method description a hyperlink using the URL in the
-              method URL field
-            default: false
-          - type: text
-            name: url
-            label: Method URL
+        template_types:
+          - contact_with_link
+          - contact_no_link
       - type: field_group
         name: social_media
         label: Social Media Section
