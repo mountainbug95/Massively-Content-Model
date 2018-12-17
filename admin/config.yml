@@ -1,0 +1,281 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: uploads
+public_folder: /uploads
+collections:
+  - name: config
+    label: Config
+    files:
+      - name: config
+        label: Config
+        file: _config.yml
+        fields:
+          - name: title
+            label: Title
+            widget: text
+            required: true
+          - name: nav
+            widget: object
+            required: false
+            label: Navigation Bar Configuration
+            fields:
+              - name: display_social_icons
+                widget: boolean
+                required: false
+                default: false
+                hint: Displays the social icons in the page navigation bar
+              - name: social_icons
+                widget: list
+                required: false
+                label: Social Media Icons
+                hint: >-
+                  A list of social media icons displayed on the right side of
+                  the navigation bar
+                fields:
+                  - name: title
+                    widget: string
+                    required: true
+                    label: Icon Title
+                  - name: icon
+                    widget: string
+                    required: true
+                    label: Icon
+                    hint: Font Awesome Icon
+                  - name: url
+                    widget: string
+                    required: false
+                    label: URL
+          - name: footer
+            widget: object
+            required: false
+            label: Footer
+            hint: Footer Configuration
+            fields:
+              - name: enable_form
+                widget: boolean
+                required: false
+                label: Enable Contact Form
+                default: false
+                hint: Displays the contact form in the site footer
+              - name: contact_information
+                widget: list
+                required: false
+                label: Contact Methods
+                hint: A list of contact methods displayed in the site footer
+                types:
+                  - name: contact_with_link
+                    widget: object
+                    label: Contact Method With Link
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Method Title
+                        default: Method Title
+                        hint: Displayed in bold next to the method description
+                      - name: description
+                        widget: text
+                        required: true
+                        label: Method Description
+                      - name: url
+                        widget: string
+                        required: false
+                        label: Method URL
+                  - name: contact_no_link
+                    widget: object
+                    label: Contact Method Without Link
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Method Title
+                        default: Method Title
+                        hint: Displayed in bold next to the method description
+                      - name: description
+                        widget: text
+                        required: true
+                        label: Method Description
+              - name: social_media
+                widget: object
+                required: false
+                label: Social Media Section
+                fields:
+                  - name: enabled
+                    widget: boolean
+                    required: false
+                    label: Enabled
+                    default: false
+                    hint: Displays the social media section
+                  - name: title
+                    widget: string
+                    required: false
+                    label: Section Title
+                    hint: Displayed in bold next to the social media icons
+                  - name: social_icons
+                    widget: list
+                    required: false
+                    label: Social Media Icons
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Icon Title
+                      - name: icon
+                        widget: string
+                        required: true
+                        label: Icon
+                        hint: Font Awesome Icon
+                      - name: url
+                        widget: string
+                        required: false
+                        label: URL
+  - name: home
+    label: Home
+    files:
+      - name: home
+        label: Home
+        file: index.md
+        fields:
+          - name: layout
+            widget: hidden
+            required: true
+            label: Layout
+            default: home
+          - name: intro
+            widget: object
+            required: false
+            label: Page Intro
+            hint: The intro section displayed at the top of the landing page
+            fields:
+              - name: header
+                widget: text
+                required: false
+                label: Intro Title
+                hint: The title displayed at the top of the page intro
+              - name: text
+                widget: markdown
+                required: false
+                label: Intro Text
+                hint: The text displayed below the intro title
+              - name: show_scroll_button
+                widget: boolean
+                required: false
+                label: Show Scroll Button
+                default: false
+                hint: Displays the scroll button at the bottom of the intro section
+  - name: page
+    label: Pages
+    folder: /
+    filter:
+      field: layout
+      value: page
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - name: title
+        widget: string
+        required: true
+        label: Page Title
+      - name: header
+        widget: text
+        required: true
+        label: Page Header
+        hint: The bold text displayed below the page date (under the nav bar)
+      - name: excerpt
+        widget: markdown
+        required: false
+        label: Page Excerpt
+        hint: The text displayed below the page header and in any page thumbnails
+      - name: date
+        widget: date
+        required: false
+        label: Page Date
+        hint: The date the page was created (displayed above the page header)
+      - name: image
+        widget: image
+        required: false
+        label: Content Image
+        hint: The image displayed above the page content
+      - name: image_alt
+        widget: image
+        required: false
+        label: Alternate Image
+        hint: The image displayed in any page thumbnails
+      - name: layout
+        widget: hidden
+        required: true
+        label: Layout
+        default: page
+      - name: body
+        label: Content
+        widget: markdown
+  - name: post
+    label: Posts
+    folder: _posts
+    filter:
+      field: layout
+      value: page
+    create: true
+    extension: md
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - name: title
+        widget: string
+        required: true
+        label: Post Title
+      - name: header
+        widget: text
+        required: true
+        label: Post Header
+        hint: The bold text displayed below the post date (under the nav bar)
+      - name: excerpt
+        widget: markdown
+        required: false
+        label: Post Excerpt
+        hint: The text displayed below the post header and in any post thumbnails
+      - name: date
+        widget: date
+        required: true
+        label: Post Date
+        hint: The date the post was created (displayed above the post header)
+      - name: image
+        widget: image
+        required: false
+        label: Content Image
+        hint: The image displayed above the post content
+      - name: image_alt
+        widget: image
+        required: false
+        label: Alternate Image
+        hint: The image displayed in any post thumbnails
+      - name: layout
+        widget: hidden
+        required: true
+        label: Layout
+        default: page
+      - name: body
+        label: Content
+        widget: markdown
+  - name: elements
+    label: Elements
+    files:
+      - name: elements
+        label: Elements
+        file: elements.md
+        fields:
+          - name: title
+            widget: string
+            required: true
+            label: Page Title
+          - name: header
+            widget: text
+            required: true
+            label: Page Header
+            hint: The bold text displayed below the the page nav bar
+          - name: layout
+            widget: hidden
+            required: true
+            label: Layout
+            default: elements
