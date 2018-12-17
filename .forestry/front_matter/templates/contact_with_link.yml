@@ -1,12 +1,14 @@
 ---
 label: Contact Method With Link
 hide_body: true
+is_partial: true
 display_field: title
 fields:
   - type: text
     name: title
     label: Method Title
     description: Displayed in bold next to the method description
+    default: Method Title
     config:
       required: true
   - type: textarea
