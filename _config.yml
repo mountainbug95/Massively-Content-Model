@@ -22,15 +22,15 @@ footer:
       description: |-
         1234 Somewhere Road #87257
         Nashville, TN 00000-0000
-      type: contact_no_link
+      template: contact_no_link
     - title: Phone
       description: (000) 000-0000
       url: '#'
-      type: contact_with_link
+      template: contact_with_link
     - title: Email
       description: info@untitled.tld
       url: '#'
-      type: contact_with_link
+      template: contact_with_link
   social_media:
     enabled: true
     title: Social
